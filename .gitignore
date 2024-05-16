@@ -9,5 +9,5 @@
 
 # compiled output
 /dist
-/node_modules!/dist/
-!/tsconfig.tsbuildinfo
+/node_modules
+/tsconfig.tsbuildinfo
