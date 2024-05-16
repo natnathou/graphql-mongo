@@ -1,5 +1,6 @@
 import app from "./api";
 import { runGraphQlServer } from "./graphQl";
+import {connectDb} from "./db";
 const main = async () => {
 
     const PORT = 3000;
@@ -9,6 +10,7 @@ const main = async () => {
     });
 
     app.listen(PORT, async () => {
+        await connectDb();
         await runGraphQlServer(app);
         console.log(`Server is running on localhost:${PORT}`);
     });
