@@ -1,5 +1,5 @@
 {
     "legacyWatch": ["dist"],
-    "exec": "node ./dist/main",
+    "exec": "cpx './schema.graphql' dist/ && node ./dist/main",
     "ext": "js, json"
 }

@@ -1,28 +1,28 @@
-import {User} from "../interfaces/user.interfaces";
 import {userProvider} from "./user.provider";
+import {UserModel} from "../models/user.model";
 
 const setUniqueIndex = () => {
     return userProvider.setUniqueIndex();
 }
 
 
-const createUser = async (user: Omit<User, '_id' | 'createdAt' | 'updatedAt'>): Promise<User> => {
+const createUser = async (user: Omit<UserModel, '_id' | 'createdAt' | 'updatedAt'>): Promise<UserModel> => {
     return userProvider.insertUser(user);
 }
 
-const getOneUser = async (id: string): Promise<User> => {
+const getOneUser = async (id: string): Promise<UserModel> => {
     return userProvider.findOneUser(id);
 }
 
-const updateUser = async (id: string, user: Omit<User, '_id' | 'createdAt' | 'updatedAt'>): Promise<User> => {
+const updateUser = async (id: string, user: Partial<Omit<UserModel, '_id' | 'createdAt' | 'updatedAt'>>): Promise<UserModel> => {
     return userProvider.updateUser(id, user);
 }
 
-const deleteUser = async (id: string): Promise<User> => {
+const deleteUser = async (id: string): Promise<UserModel> => {
     return userProvider.deleteUser(id);
 }
 
-const getAllUsers = async (): Promise<User[]> => {
+const getAllUsers = async (): Promise<UserModel[]> => {
     return userProvider.findUsers();
 
 }

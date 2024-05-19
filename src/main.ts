@@ -1,5 +1,5 @@
 import app from "./api";
-import { runGraphQlServer } from "./graphQl";
+import { runGraphQlServer } from "./graphql";
 import {connectDb} from "./db";
 const main = async () => {
 
